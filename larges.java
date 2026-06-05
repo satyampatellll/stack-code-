@@ -9,7 +9,6 @@ public class larges {
         stack.push(25);
         stack.push(80);
         stack.push(40);
-
         int max = stack.peek();
 
         for (Integer num : stack) {
