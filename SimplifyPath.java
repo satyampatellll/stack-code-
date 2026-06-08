@@ -30,5 +30,3 @@ public class SimplifyPath {
         System.out.println("Simplified Path: " + simplified);
     }
 }
-
-
