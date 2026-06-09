@@ -6,7 +6,7 @@ public class SimplifyPath {
         String[] components = path.split("/");
         for (String component : components) {
             if (component.equals("") || component.equals(".")) {
-                continue;
+                  
             } else if (component.equals("..")) {
                 if (!stack.isEmpty()) {
                     stack.pop();

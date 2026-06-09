@@ -1,7 +1,7 @@
 //bottom addition 
 import java.util.Scanner;
 import java.util.Stack;
-public class bottomadditin {
+public class BottomAddition {
     public static void main(String[] args){
         Stack<Integer> s = new Stack<>();
         s.push(10);
