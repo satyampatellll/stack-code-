@@ -8,23 +8,24 @@ import java.util.Stack;
 public class BaseballScore {
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<>();
-        int[] scores = {5, 2, -3, 4, 9};
-        
-        for (int score : scores) {
-            if (score == -3) {
+        for (String op : new String[]{"5", "2", "C", "D", "+"}) {
+            if (op.equals("C")) {
                 stack.pop();
-            } else if (score == -4) {
+            } else if (op.equals("D")) {
                 stack.push(stack.peek() * 2);
+            } else if (op.equals("+")) {
+                int last = stack.pop();
+                int secondLast = stack.peek();
+                stack.push(last);
+                stack.push(last + secondLast);
             } else {
-                stack.push(score);
+                stack.push(Integer.valueOf(op));
             }
         }
-        
         int total = 0;
         for (int score : stack) {
             total += score;
         }
-        
         System.out.println("Total Score: " + total);
     }
 }
