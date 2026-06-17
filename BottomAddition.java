@@ -8,9 +8,11 @@ public class BottomAddition {
         s.push(20);
         s.push(30);
         System.out.println("Stack before addition: "+s);
-        Scanner var = new Scanner(System.in);
-        System.out.print("Enter a number to add at the bottom: ");
-        int num = var.nextInt();
+        int num;
+        try (Scanner var = new Scanner(System.in)) {
+            System.out.print("Enter a number to add at the bottom: ");
+            num = var.nextInt();
+        }
         addAtBottom(s, num);
         System.out.println("Stack after addition: "+s);
     }

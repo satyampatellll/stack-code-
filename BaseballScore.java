@@ -9,17 +9,16 @@ public class BaseballScore {
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<>();
         for (String op : new String[]{"5", "2", "C", "D", "+"}) {
-            if (op.equals("C")) {
-                stack.pop();
-            } else if (op.equals("D")) {
-                stack.push(stack.peek() * 2);
-            } else if (op.equals("+")) {
-                int last = stack.pop();
-                int secondLast = stack.peek();
-                stack.push(last);
-                stack.push(last + secondLast);
-            } else {
-                stack.push(Integer.valueOf(op));
+            switch (op) {
+                case "C" -> stack.pop();
+                case "D" -> stack.push(stack.peek() * 2);
+                case "+" -> {
+                    int last = stack.pop();
+                    int secondLast = stack.peek();
+                    stack.push(last);
+                    stack.push(last + secondLast);
+                }
+                default -> stack.push(Integer.valueOf(op));
             }
         }
         int total = 0;

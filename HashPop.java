@@ -6,7 +6,7 @@ public class HashPop {
    }
 
    static String build(String var0) {
-      Stack var1 = new Stack();
+      Stack<Character> var1 = new Stack<>();
 
       for(int var2 = 0; var2 < var0.length(); ++var2) {
          char var3 = var0.charAt(var2);
